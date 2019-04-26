@@ -1,0 +1,10 @@
+<div class="mb-4">
+
+  <ul class="{% if site.layout == 'stacked' %}d-flex flex-justify-center{% endif %} pl-2" style="list-style:none;">
+    {% for page in site.pages %}
+    <li class="mx-4 f4 lh-condensed mb-1">
+      <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

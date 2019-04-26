@@ -1,0 +1,10 @@
+<div class="mb-4">
+  <ul class="{% if site.layout == 'stacked' %}d-flex flex-justify-center{% endif %} pl-2" style="list-style:none;">
+  {% assign page_list = site.pages | where:'include_in_navigation', true %}
+    {% for page in page_list %}
+    <li class="ml-0 my-3 f4 lh-condensed mb-1">
+      <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

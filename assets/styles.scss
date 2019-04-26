@@ -2,6 +2,7 @@
 ---
 @import url('https://unpkg.com/primer/build/build.css');
 @import 'highlight-syntax';
+@import 'markdown-styles';
 
 
 // If a user adds a custom font, this component will stop it from bleeding into GitHub components:
@@ -40,4 +41,12 @@
 
 .min-height-full {
   min-height: 100vh;
+}
+
+.sidebar {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }

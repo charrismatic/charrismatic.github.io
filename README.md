@@ -11,16 +11,30 @@ It's all possible using the combination of [Jekyll](https://jekyllrb.com/docs/) 
 ## Installation
 
 ### Fork the `github/personal-website` repo
+https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md
+
 
 You'll be making your own copy of the "personal website starter" repository so you have your own project to customize. A "fork" is a copy of a repository. So select "Fork" atop [the `github/personal-website` repository](https://github.com/github/personal-website).
 
 Once you've found a home for your forked repository, it's yours. You're the owner, so you're ready to publish, if you wish.
+
+__Note:__ This step is important because the jekyll github-metadata module gets the site meta data from the path the project was cloned from.
+
+see: https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#overrides
 
 ### Install in your local development environment
 
 If you want to manage your website in a local web development environment, you'll be using [Ruby](https://jekyllrb.com/docs/installation/).
 
 Once you've found a home for your forked repository, **[clone it](https://help.github.com/articles/cloning-a-repository/)**.
+
+#### Setup your Github Autentication Token
+
+see: https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md
+
+The `JEKYLL_GITHUB_TOKEN` env variable is checked at runtime
+
+so save the token in a .env file to be read before serving the files.
 
 #### Install Jekyll
 
@@ -37,7 +51,7 @@ cd personal-website
 ```
 4. Install missing gems
 ```
-bundle install
+bundle install --path vendor/bundle
 ```
 5. Build the site and make it available on a local server
 ```
@@ -60,6 +74,13 @@ Configuration file: /octocat/personal-website/_config.yml
 ```
 
 Don't worry about the "No GitHub API authentication could be found" message. [API authentication is only necessary](https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md) if you intend to display more detailed metadata, like a branch name.
+
+To run with Github API auth enabled add the env varible to the exec command before serving
+
+```
+JEKYLL_GITHUB_TOKEN=XXXXXXXXXXX bundle exec jekyll serve
+```
+
 
 6. Now browse to [http://localhost:4000](http://localhost:4000)
 
@@ -222,5 +243,5 @@ You also have the option to add on to and extend Primer's styles by adding custo
 
 
 ## License
-
+dconf
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

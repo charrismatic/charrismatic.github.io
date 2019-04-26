@@ -1,0 +1,8 @@
+<div class="tag-container d-flex flex-items-baseline">
+  <h6 class="my-0 py-0">Tags:</h6>
+  <ul class="d-flex box list-style-none pl-2">
+  {% for tag in page.tags %}
+    <li class="mx-2 my-0 py-0"><a class="label Label--gray my-0 text-grey-dark" href="/{{ site.baseurl }}tag/{{ tag }}">{{ tag }}</a></li>
+  {% endfor %}
+  </ul>
+</div>

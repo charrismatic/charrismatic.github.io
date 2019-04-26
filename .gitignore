@@ -1,3 +1,4 @@
+.env
 *.gem
 .bundle
 .sass-cache

@@ -4,12 +4,6 @@
   <div class="container-lg py-6 p-responsive text-center">
     {% include masthead.html metadata=true %}
 
-      {% if site.pages %}
-        {% include page-list.html %}
-      {% endif %}
-
-      {% include for-hire.html %}
-
     <div {% if site.style == 'dark' %}class="text-white"{% endif %}>
       {{ content }}
     </div>
@@ -17,12 +11,6 @@
     <div class="my-6">
       {% include projects.html %}
     </div>
-
-    {% if site.topics %}
-      <div class="my-6">
-        {% include interests.html %}
-      </div>
-    {% endif %}
 
     {% unless posts_total == 0 %}
       <div class="my-6">
@@ -37,14 +25,30 @@
 
     <div class="col-md-7 col-lg-8 col-xl-9 px-4 py-6 px-lg-7 border-top border-md-top-0 bg-gray-light" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
       <div class="mx-auto" style="max-width: 900px;">
-        {% unless content == ""  %}
           <div class="f4 {% if site.style == 'dark' %}text-white{% endif %} mb-6">
-            {{ content }}
+
+            {{ page.content  | markdownify }}
+
+            <div style="display:flex" class="my-4">
+              <section style="flex:1">
+                <h2 class="my-2">My Projects</h2>
+                <ul class="mt-3" style="list-style:none">
+                  {% assign filtered_repos = site.github.public_repositories | where:'fork', false %}
+                  {% for repo in filtered_repos %}
+                    {% unless site.projects.exclude.projects contains repo.name %}
+                      <li class="my-1"><a href='{{ repo.html_url }}'>{{ repo.name }}</a></li>
+                    {% endunless %}
+                  {% endfor %}
+                </ul>
+              </section>
+              <section style="flex:2" class="ml-4">
+              {% if site.topics %}
+                {% include interests.html %}
+              {% endif %}
+              </section>
+            </div>
           </div>
-        {% endunless %}
-
-        {% include projects.html %}
-
+        </div>
       </div>
     </div>
   </div>
