@@ -1,14 +1,32 @@
-source: source
 
-destination: public
+destination: _public
+
+exclude:
+  - Makefile
+  - README.md
+  - .env
+  - bin
+  - CONTRIBUTING.md
+  - Gemfile
+  - Gemfile.lock
+  - CNAME
+  - vendor
+  - package.json
+  - .babelrc
+  - yarn.lock
+  - package-lock.json
+  - webpack.config.js
+  - node_modules
+  - Dockerfile
+  - docker_compose.yml
 
 sass:
   sass_dir: _sass
   style: compressed
 
-layout: sidebar # [sidebar, stacked]
+layout: sidebar    # [sidebar, stacked]
 
-style: light # [light, dark]
+style: light       # [light, dark]
 
 plugins:
   - jekyll-octicons
@@ -16,22 +34,24 @@ plugins:
   - jekyll-gist
   - jemoji
 
-permalink: /:year/:month/:day/:title/
+permalink: /:categories/:slug/
 
 defaults:
   -
     scope:
-      path: "" # an empty string here means all files in the project
+      path: ""     # an empty string here means all files in the project
       type: "posts"
     values:
       layout: "post"
+      tags: "post"
+      categories: ""
 
 projects:
   sort_by: pushed
   # sort_by options:
   #   - pushed
   #   - stars
-  limit: 12
+  limit: 10
   exclude:
     forks: true
     projects:

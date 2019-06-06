@@ -1,0 +1,68 @@
+{% include header.html %}
+
+{% capture post_body %}
+  <div class="article">
+    {{ content }}
+  </div>
+{% endcapture %}
+
+{% if site.layout == 'stacked' %}
+  <div class="container-lg py-6 p-responsive text-center">
+    {% include masthead.html metadata=false %}
+    <div class="container-md f4 text-left border rounded-2 bg-white p-3 p-sm-5 mt-6">
+      <h1 class="f00-light lh-condensed">{{ page.title }}</h1>
+      {{ post_body }}
+    </div>
+  </div>
+{% else %}
+  <div class="d-md-flex min-height-full {% unless site.style == 'dark' %}border-md-bottom{% endunless %}">
+
+    {% include sidebar.html %}
+
+    {% include page-content-open.html %}
+      <div class=markdown-body f4 {% if site.style == 'dark' %}text-white{% endif %}">
+      {% if page.title %}<h1 class="f00-light lh-condensed">{{ page.title }}</h1>{% endif %}
+
+      {% assign rawtags = "" %}
+      {% for post in site.posts %}
+        {% assign ttags = post.tags | join:'|' | append:'|' %}
+        {% assign rawtags = rawtags | append:ttags %}
+      {% endfor %}
+      {% assign rawtags = rawtags | split:'|' | sort %}
+
+      {% assign tags = "" %}
+      {% for tag in rawtags %}
+        {% if tag != "" %}
+          {% if tags == "" %}
+            {% assign tags = tag | split:'|' %}
+          {% endif %}
+          {% unless tags contains tag %}
+            {% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+
+      <div class="labels border-bottom pb-4 pl-3 ">
+      {% for tag in tags %}
+        <a href="#{{ tag | slugify }}" class="label py-1 px-2">{{ tag }}</a>
+      {% endfor %}
+      </div>
+
+      {% for tag in tags %}
+        <h2 id="{{ tag | slugify }}" class="text-small">{{ tag }}</h2>
+        <ul class="text-small pl-3">
+         {% for post in site.posts %}
+           {% if post.tags contains tag %}
+           <li class="list-style-none text-bold"><a href="{{ post.url }}">{{ post.title }}</a></li>
+           {% endif %}
+         {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+
+    {% include page-content-close.html %}
+
+  </div>
+{% endif %}
+
+{% include footer.html %}

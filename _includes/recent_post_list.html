@@ -1,5 +1,5 @@
   <div class="f4 {% if site.style == 'dark' %}text-white{% endif %} mb-6">
-    <h2>Recent Posts</h2>
+    <h2 class="my-4">Recent Posts</h2>
     {% unless posts_total == 0 %}
       <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
         {% for post in site.posts limit: 4 %}

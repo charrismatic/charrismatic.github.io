@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Stack
-include_in_navigation: true
+include_in_navigation: false
+published: false
 ---
 
 Technologies that I use

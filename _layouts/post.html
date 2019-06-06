@@ -1,0 +1,39 @@
+{% include header.html %}
+
+{% capture post_body %}
+  <div class="article">
+    {{ content }}
+  </div>
+{% endcapture %}
+
+{% if site.layout == 'stacked' %}
+  <div class="container-lg py-6 p-responsive text-center">
+    {% include masthead.html metadata=false %}
+    <div class="container-md f4 text-left border rounded-2 bg-white p-3 p-sm-5 mt-6">
+      <h1 class="f00-light lh-condensed">{{ page.title }}</h1>
+      <p class="{% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %} mb-5">Published {{ page.date | date: "%b %d, %Y"}}</p>
+      {{ post_body }}
+    </div>
+  </div>
+{% else %}
+  <div class="d-md-flex min-height-full {% unless site.style == 'dark' %}border-md-bottom{% endunless %}">
+
+    {% include sidebar.html %}
+
+    {% include page-content-open.html %}
+
+      <div class=markdown-body f4 {% if site.style == 'dark' %}text-white{% endif %}">
+        {% if page.title %}<h1 class="f00-light lh-condensed">{{ page.title }}</h1>{% endif %}
+        <p class="{% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %} mb-5">Published {{ page.date | date: "%b %d, %Y"}}</p>
+        {% if page.tags %}
+          {% include post-tags.html %}
+        {% endif %}
+        {{ post_body }}
+      </div>
+
+    {% include page-content-close.html %}
+
+  </div>
+{% endif %}
+
+{% include footer.html %}
