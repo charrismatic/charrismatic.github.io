@@ -1,6 +1,13 @@
 source: source
+
 destination: public
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
 layout: sidebar # [sidebar, stacked]
+
 style: light # [light, dark]
 
 plugins:
