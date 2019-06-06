@@ -1,0 +1,12 @@
+  <div class="f4 {% if site.style == 'dark' %}text-white{% endif %} mb-6">
+    <h2>Recent Posts</h2>
+    {% unless posts_total == 0 %}
+      <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+        {% for post in site.posts limit: 4 %}
+          <div class="col-sm-6 col-md-12 col-lg-6 col-xl-6 mb-3">
+            {% include post-card.html %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endunless %}
+  </div>

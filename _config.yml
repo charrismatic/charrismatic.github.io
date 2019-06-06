@@ -1,3 +1,5 @@
+source: source
+destination: public
 layout: sidebar # [sidebar, stacked]
 style: light # [light, dark]
 
@@ -22,60 +24,31 @@ projects:
   # sort_by options:
   #   - pushed
   #   - stars
-  limit: 15
+  limit: 12
   exclude:
     forks: true
     projects:
-    # - repo-name
+     - charrismatic-jamdown-playground
+     - 00_Notes
 
 social_media:
-  # behance: your_username
-  # dribbble: your_username
+  instagram: ma.ttharr.is
+  linkedin: matt--harris
+  stackoverflow: Matt.Harris
+  twitter: __Matt_Harris__
+  website: https://ma.ttharr.is
   # facebook: your_username
   # hackerrank: your_username
-  instagram: ma.ttharr.is
-  # keybase: your_username
-  linkedin: matt--harris
   #stackshare: charrismatic
   # medium: your_username
-  stackoverflow: Matt.Harris
   # telegram: your_username
-  twitter: __Matt_Harris__
   # unsplash: your_username
-  # vk: your_username
-  website: https://ma.ttharr.is
-  # youtube: your_username
 
 topics:
-  - name: CSS
-    web_url: https://github.com/topics/css
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
-
-  - name: Web design
-
-  - name: Sass
-    web_url: https://github.com/topics/sass
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/sass/sass.png
 
   - name: docker
     web_url: https://github.com/topics/docker
     image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/docker/docker.png
-
-  - name: data-visualization
-    web_url: https://github.com/topics/data-visualization
-
-  - name: cryptocurrency
-    web_url: https://github.com/topics/cryptocurrency
-
-  - name: continuous-integration
-    web_url: https://github.com/topics/continuous-integration
-
-  - name: awesome
-    web_url: https://github.com/topics/awesome
-    image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/awesome/awesome.png
-
-  - name: api
-    web_url: https://github.com/topics/api
 
   - name: go
     web_url: https://github.com/topics/go
@@ -109,10 +82,6 @@ topics:
     web_url: https://github.com/topics/kubernetes
     image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/kubernetes/kubernetes.png
 
-  - name: laravel
-    web_url: https://github.com/topics/laravel
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/laravel/laravel.png
-
   - name: linux
     web_url: https://github.com/topics/linux
     image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/linux/linux.png
@@ -138,10 +107,6 @@ topics:
   - name: terminal
     web_url: https://github.com/topics/terminal
     image_url: https://raw.githubusercontent.com/github/explore/d92924b1d925bb134e308bd29c9de6c302ed3beb/topics/terminal/terminal.png
-
-  - name: ubuntu
-    web_url: https://github.com/topics/ubuntu
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/ubuntu/ubuntu.png
 
   - name: vagrant
     web_url: https://github.com/topics/vagrant

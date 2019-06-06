@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source .env
+
+JEKYLL_GITHUB_TOKEN=$JEKYLL_GITHUB_TOKEN bundle exec jekyll $@

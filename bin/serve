@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source .env
+
+
+SERVE_FLAGS="--livereload"
+
+JEKYLL_GITHUB_TOKEN=$JEKYLL_GITHUB_TOKEN bundle exec jekyll serve $SERVE_FLAGS

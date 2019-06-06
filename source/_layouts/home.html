@@ -1,24 +1,24 @@
-{% include header.html %}
+{%- include header.html -%}
 
-{% if site.layout == 'stacked' %}
+{%- if site.layout == 'stacked' -%}
   <div class="container-lg py-6 p-responsive text-center">
-    {% include masthead.html metadata=true %}
+    {%- include masthead.html metadata=true -%}
 
-      {% if site.pages %}
-        {% include page-list.html %}
-      {% endif %}
+      {%- if site.pages -%}
+        {%- include page-list.html -%}
+      {%- endif -%}
 
-      {% include for-hire.html %}
+      {%- include for-hire.html -%}
 
     <div {% if site.style == 'dark' %}class="text-white"{% endif %}>
       {{ content }}
     </div>
 
     <div class="my-6">
-      {% include projects.html %}
+      {%- include projects.html -%}
     </div>
 
-    {% if site.topics %}
+    {%- if site.topics -%}
       <div class="my-6">
         {% include interests.html %}
       </div>
@@ -44,6 +44,8 @@
         {% endunless %}
 
         {% include projects.html %}
+
+        {% include recent_post_list.html %}
 
       </div>
     </div>

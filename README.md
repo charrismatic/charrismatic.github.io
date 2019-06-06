@@ -1,4 +1,10 @@
-# Get started building your personal website
+# Github Hosted Static Site
+
+This is a fork from https://github.com/github/personal-website
+
+Testing out some features of jeykyll and the github api.
+
+
 
 ### Showcase your software development skills
 
