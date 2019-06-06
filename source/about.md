@@ -7,6 +7,6 @@ include_in_navigation: true
 
 Some information about me
 
-Want to Chat? Catch me online on [Discord](https://discord.gg/RAjAnjx)
+Want to Chat? Catch me online on [Discord](https://discord.gg/MQhykSC) 
 
 ![Discord](https://img.shields.io/discord/474874280786657291.svg)
