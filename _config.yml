@@ -1,6 +1,4 @@
 
-destination: _public
-
 exclude:
   - Makefile
   - README.md
